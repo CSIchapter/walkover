@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Walkover</title>
+        <style>
+            body{
+                background-image: url(logo.jpeg);
+                background-size: 1550px 1000px;
+            }
+            h1{
+                font-family:cursive;
+                text-align: center;
+            }
+            h4{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Walkover</h1>
+        <h4>A journey to innovation!</h4>
+        <p>Walkover is an collabarative startup with Flipkart.  It's a service based company, and employees in this startup can have facility to work from home.</p>
+        <p>No matter where the employees work, our goal is to deliver the service to the client on given time.</p>
+        <p id="eligibility">Eligibility</p>
+        <ol>
+            <li>Candidates should be perceiving their final year or prefinal year in B.Tech/B.E/BBA</li>
+            <li>Candidates should have minimum CGPA of 7.0</li>
+            <li>Candidates should have to spend minimum of 1 month on this internship</li>
+            <li>Candidates should have basic knowledge on HTML, CSS, Java Script, Data Structures and Algorithms, Java, Python, Node.js, SQL, Mongodb, etc for Technical Roles</li>
+            <li>Candidates should have knowledge of analysing Market, Databases, Finance, etc for management roles</li>
+        </ol>
+        <p id="roles">Roles</p>
+        <ol>
+            <li>Full Stack Web Developer </li>
+            <li>Data Analyst</li>
+            <li>System Engineer</li>
+            <li>Data Scientist</li>
+            <li>Technical Consultant</li>
+            <li>Network Security Engineer</li>
+            <li>Front End Tester</li>
+            <li>Human Resource Intern</li>
+            <li>Marketing Management Intern</li>
+            <li>Cost cutting Intern</li>
+            <li>Management Information System Intern</li>
+            <li>Consultant</li>
+        </ol>
+        <form method="post" action="https://sheetdb.io/api/v1/deozuo5bucoil" id="sheetdb-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="data[name]" required>
+            <p></p>
+            <label for="conact">Contact Number</label>
+            <input type="text" id="contact" name="data[contact]" required>
+            <p></p>
+            <label for="gpa">CGPA(current)</label>
+            <input type="number" id="gpa" name="data[gpa]" required>
+            <p></p>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="data[email]" required>
+            <p></p>
+            <label for="role">Roles</label>
+            <input type="text" id="role" name="data[role]" required>
+            <p></p>
+            <input type="submit" value="submit">
+        </form>
+        <script>
+            var form=document.getElementById("sheetdb-form");
+            form.addEventListener("submit",e=>{
+                e.preventDefault();
+                fetch(form.action,{
+                    method:"POST",
+                    body:new FormData(document.getElementById("sheetdb-form")),
+                }).then(
+                    response=>response.json()
+                ).then((html)=>{
+                    window.alert("Thank you for submitting form")
+                });
+            });
+        </script>
+    </body>
+</html>
